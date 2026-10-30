@@ -2,9 +2,9 @@ apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
   name: sf-arkiv
-  namespace: template
+  namespace: jobbsporet
   labels:
-    team: template
+    team: jobbsporet
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: "256M"
 spec:
@@ -33,8 +33,8 @@ spec:
         databases:
           - name: arkiv
   ingresses:
-    - "https://sf-arkiv-template.intern.nav.no"
-    - "https://sf-arkiv-template.nav.no"
+    - "https://sf-arkiv-jobbsporet.intern.nav.no"
+    - "https://sf-arkiv-jobbsporet.nav.no"
   azure:
     application:
       enabled: true
@@ -45,4 +45,4 @@ spec:
           namespace: teamcrm
           cluster: prod-external
   envFrom:
-    - configmap: sf-arkiv-template
+    - configmap: sf-arkiv
